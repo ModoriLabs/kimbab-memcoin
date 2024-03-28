@@ -2,6 +2,7 @@
 pragma solidity >=0.8.21 <0.9.0;
 
 import { Script } from "forge-std/Script.sol";
+import { console } from "forge-std/console.sol";
 
 abstract contract BaseScript is Script {
     /// @dev Included to enable compilation of the script without a $MNEMONIC environment variable.
@@ -24,7 +25,8 @@ abstract contract BaseScript is Script {
     ///
     /// The use case for $ETH_FROM is to specify the broadcaster key and its address via the command line.
     constructor() {
-        address from = vm.envOr({ name: "ETH_FROM", defaultValue: address(0) });
+        address from = vm.addr(vm.envUint("PRIVATE_KEY"));
+        console.log("from: %s", from);
         if (from != address(0)) {
             broadcaster = from;
         } else {

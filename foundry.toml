@@ -1,6 +1,7 @@
 # Full reference https://github.com/foundry-rs/foundry/tree/master/crates/config
 
 [profile.default]
+  solc_version = "0.8.25"
   auto_detect_solc = false
   block_timestamp = 1_680_220_800 # March 31, 2023 at 00:00 GMT
   bytecode_hash = "none"
@@ -12,7 +13,6 @@
   optimizer_runs = 10_000
   out = "out"
   script = "script"
-  solc = "0.8.21"
   src = "src"
   test = "test"
 
@@ -21,15 +21,7 @@
   verbosity = 4
 
 [etherscan]
-  arbitrum_one = { key = "${API_KEY_ARBISCAN}" }
-  avalanche = { key = "${API_KEY_SNOWTRACE}" }
-  bnb_smart_chain = { key = "${API_KEY_BSCSCAN}" }
-  gnosis_chain = { key = "${API_KEY_GNOSISSCAN}" }
-  goerli = { key = "${API_KEY_ETHERSCAN}" }
-  mainnet = { key = "${API_KEY_ETHERSCAN}" }
-  optimism = { key = "${API_KEY_OPTIMISTIC_ETHERSCAN}" }
-  polygon = { key = "${API_KEY_POLYGONSCAN}" }
-  sepolia = { key = "${API_KEY_ETHERSCAN}" }
+  # avalanche = { key = "${API_KEY_SNOWTRACE}" }
 
 [fmt]
   bracket_spacing = true
